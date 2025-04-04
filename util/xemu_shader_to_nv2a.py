@@ -8,7 +8,7 @@ import re
 import sys
 from typing import List
 
-import nv2avsh
+import nv2a_vsh
 
 
 _HEX_STRING = r"0x[0-9a-fA-F]+"
@@ -59,7 +59,7 @@ def _main(args):
 
     for index, shader in enumerate(shaders):
         print(f"; Shader {args.source_file} - {index+1}")
-        source = nv2avsh.disassemble.disassemble(shader, False)
+        source = nv2a_vsh.disassemble.disassemble(shader, explain=False)
         print("\n".join(source))
         print("\n")
 
